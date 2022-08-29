@@ -107,6 +107,9 @@ const beer = new MenuItem('Beer', 'drink', 5)
 const coke = new MenuItem('Coke', 'drink', 3)
 const water = new MenuItem('Water', 'drink', 3)
 
-menuManager.addToMenu(salamePanini, pizzaMargherita, pastaArrabbiata, pizzaSalame)
+menuManager.addToMenu(salamePanini, pizzaMargherita, pastaArrabbiata, pizzaSalame, espresso, beer, coke, water)
+
+const orderManager = new OrdersManager(bestCoffeeInTown.orders)
+
 
 console.log(bestCoffeeInTown);

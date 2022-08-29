@@ -3,7 +3,7 @@ class CoffeeShop {
 	constructor(name) {
 
 		this.name = name
-		this.menuItem = []
+		this.menu = []
 		this.orders = []
 
 	}
@@ -37,13 +37,27 @@ class MenuItemManager {
 		this.menuItem = menuItem
 	}
 
-}
+	addToMenu(menuItem) {
+		this.CoffeeShop.menu.push(menuItem)
+	}
 
+}
 
 
 class OrdersManager {
 
-	constructor() {
+	constructor(orderItem) {
+
+		this.orderItem = orderItem
+
+	}
+
+	addOrder(orderItem) {
+		this.CoffeeShop.menu.includes(orderItem) ? this.CoffeeShop.order.push(orderItem) : console.log("This item is currently unavailable!");
+
+	}
+
+	fulfillOrder() {
 
 	}
 }

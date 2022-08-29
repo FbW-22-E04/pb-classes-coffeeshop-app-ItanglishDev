@@ -43,19 +43,19 @@ class MenuItemManager {
 
 	cheapestItem() {
 
-		const smallest = this.CoffeeShop.menu.sort((a, b) => a.price - b.price)
+		const smallest = this.menu.sort((a, b) => a.price - b.price)
 		return smallest[0]
 	}
 
 	drinksOnly() {
-
-		const onlyDrinks = this.CoffeeShop.menu.filter(type === 'drink')
-		return onlyDrinks
+		const onlyDrinks = []
+		console.log(onlyDrinks = this.menu.filter(this.menu.type === 'drink'));
+		// return onlyDrinks
 	}
 
 	foodOnly() {
 
-		return onlyFood = this.CoffeeShop.menu.filter(type === 'Food')
+		return onlyFood = this.menu.filter(type == 'Food')
 
 	}
 
@@ -72,17 +72,9 @@ class OrdersManager {
 
 	addOrder(orderItem) {
 
-		for (const key in object) {
-			if (this.CoffeeShop.menu(object, key)) {
-
-
-			}
-		}
-
-
-		// this.CoffeeShop.menu[orderItem].forEach(element => this.CoffeeShop.menu[element] === -1 ? console.log("This item is currently unavailable!") : this.order.push(orderItem)
-		// );
-		// this.CoffeeShop.menu.name[orderItem] > 0 ? this.order.push(orderItem) : console.log("This item is currently unavailable!");
+		this.menu[orderItem].forEach(element => this.menu[element] == -1 ? console.log("This item is currently unavailable!") : this.order.push(orderItem)
+		);
+		// return info = this.menu[orderItem] = -1 ? console.log("This item is currently unavailable!") : this.order.push(orderItem);
 
 	}
 
@@ -93,7 +85,7 @@ class OrdersManager {
 
 	listOrders() {
 
-		this.CoffeeShop.order
+		this.order
 	}
 
 	dueAmount() {
@@ -121,7 +113,11 @@ menuManager.addToMenu(salamePanini, pizzaMargherita, pastaArrabbiata, pizzaSalam
 
 const orderManager = new OrdersManager(bestCoffeeInTown.orders)
 
-orderManager.addOrder(pizzaSalame)
+// orderManager.addOrder(pizzaSalame)
 
 // console.log(bestCoffeeInTown.order);
 console.log(bestCoffeeInTown);
+
+console.log('The cheapest item is', menuManager.cheapestItem());
+
+// console.log(menuManager.drinksOnly());

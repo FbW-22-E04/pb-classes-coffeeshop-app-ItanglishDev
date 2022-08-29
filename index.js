@@ -37,8 +37,8 @@ class MenuItemManager {
 		this.menuItem = menuItem
 	}
 
-	addToMenu(menuItem) {
-		this.CoffeeShop.menu.push(menuItem)
+	addToMenu(...menuItem) {
+		this.CoffeeShop.menu.push(...menuItem)
 	}
 
 	cheapestItem() {
@@ -93,3 +93,10 @@ class OrdersManager {
 
 
 }
+
+
+const bestCoffeeInTown = new CoffeeShop('Segafredo')
+const salamePanini = new MenuItem('Salame Panini', 'food', 4)
+const pizzaMargherita = new MenuItem('Pizza Margherita', 'food', 7)
+const pastaArrabbiata = new MenuItem('Pasta arrabbiata', 'food', 9)
+const pizzaSalame = new MenuItem('Pizza Salame', 'food', 9)

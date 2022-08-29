@@ -72,7 +72,17 @@ class OrdersManager {
 
 	addOrder(orderItem) {
 
-		this.CoffeeShop.menu.includes(orderItem) ? this.CoffeeShop.order.push(orderItem) : console.log("This item is currently unavailable!");
+		for (const key in object) {
+			if (this.CoffeeShop.menu(object, key)) {
+
+
+			}
+		}
+
+
+		// this.CoffeeShop.menu[orderItem].forEach(element => this.CoffeeShop.menu[element] === -1 ? console.log("This item is currently unavailable!") : this.order.push(orderItem)
+		// );
+		// this.CoffeeShop.menu.name[orderItem] > 0 ? this.order.push(orderItem) : console.log("This item is currently unavailable!");
 
 	}
 
@@ -111,5 +121,7 @@ menuManager.addToMenu(salamePanini, pizzaMargherita, pastaArrabbiata, pizzaSalam
 
 const orderManager = new OrdersManager(bestCoffeeInTown.orders)
 
+orderManager.addOrder(pizzaSalame)
 
+// console.log(bestCoffeeInTown.order);
 console.log(bestCoffeeInTown);

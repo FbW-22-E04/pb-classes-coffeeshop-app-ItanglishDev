@@ -32,13 +32,13 @@ class Order {
 
 class MenuItemManager {
 
-	constructor(menuItem) {
+	constructor(menu) {
 
-		this.menuItem = menuItem
+		this.menu = menu
 	}
 
-	addToMenu(...menuItem) {
-		this.CoffeeShop.menu.push(...menuItem)
+	addToMenu(...menuItems) {
+		this.menu.push(...menuItems)
 	}
 
 	cheapestItem() {
@@ -55,8 +55,8 @@ class MenuItemManager {
 
 	foodOnly() {
 
-		const onlyFood = this.CoffeeShop.menu.filter(type === 'Food')
-		return onlyFood
+		return onlyFood = this.CoffeeShop.menu.filter(type === 'Food')
+
 	}
 
 }
@@ -96,6 +96,8 @@ class OrdersManager {
 
 
 const bestCoffeeInTown = new CoffeeShop('Segafredo')
+const menuManager = new MenuItemManager(bestCoffeeInTown.menu)
+
 const salamePanini = new MenuItem('Salame Panini', 'food', 4)
 const pizzaMargherita = new MenuItem('Pizza Margherita', 'food', 7)
 const pastaArrabbiata = new MenuItem('Pasta arrabbiata', 'food', 9)
@@ -104,3 +106,7 @@ const espresso = new MenuItem('Espresso', 'drink', 2)
 const beer = new MenuItem('Beer', 'drink', 5)
 const coke = new MenuItem('Coke', 'drink', 3)
 const water = new MenuItem('Water', 'drink', 3)
+
+menuManager.addToMenu(salamePanini, pizzaMargherita, pastaArrabbiata, pizzaSalame)
+
+console.log(bestCoffeeInTown);

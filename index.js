@@ -3,8 +3,9 @@ class CoffeeShop {
 	constructor(name) {
 
 		this.name = name
-		this.menu = []
-		this.orders = []
+		this.menu = []      // menu
+		this.orders = []    //orders
+		this.drinksMenu = []
 
 	}
 }
@@ -48,14 +49,23 @@ class MenuItemManager {
 	}
 
 	drinksOnly() {
-		const onlyDrinks = []
-		console.log(onlyDrinks = this.menu.filter(this.menu.type === 'drink'));
+
+		const drinksMenu = this.menu.filter(this.menu.includes('drink'))
+		console.log(drinksMenu)
+		// drinksMenu = this.menu.filter(
+		// this.menu.type === 'drink'
+
+		// )
+
+
+		// const onlyDrinks = this.menu.filter(this.type === 'drink')
 		// return onlyDrinks
 	}
 
 	foodOnly() {
 
-		return onlyFood = this.menu.filter(type == 'Food')
+		const onlyFood = this.menu.filter('Food')
+		return onlyFood
 
 	}
 
@@ -72,20 +82,40 @@ class OrdersManager {
 
 	addOrder(orderItem) {
 
-		this.menu[orderItem].forEach(element => this.menu[element] == -1 ? console.log("This item is currently unavailable!") : this.order.push(orderItem)
-		);
+		const result = this.menu.findIndex(el => el.name === orderItem)
+		if (result > -1) {
+			this.orders.push(orderItem)
+		} else {
+			console.log("This item is currently unavailable!");
+		}
+
+		// this.menu[orderItem].forEach(element => this.menu[element] == -1 ? console.log("This item is currently unavailable!") : this.order.push(orderItem)
+		// );
 		// return info = this.menu[orderItem] = -1 ? console.log("This item is currently unavailable!") : this.order.push(orderItem);
 
 	}
 
 	fulfillOrder() {
 
-		this.CoffeeShop.order != -1 ? console.log(`The ${this.CoffeeShop.order} is ready!`) : console.log("All orders have been fulfilled!");
+		this.CoffeeShop.order > -1 ? console.log(`The ${this.CoffeeShop.order} is ready!`) : console.log("All orders have been fulfilled!");
 	}
 
 	listOrders() {
 
-		this.order
+		if (this.orders.length > 0) {
+			console.log(`The ${this.orders.item[0]} is ready!`);
+
+			this.orders.shift()
+			return
+
+		}
+		console.log("All orders have been fulfilled");
+
+	}
+
+	listOrders() {
+
+		console.log(this.orders);
 	}
 
 	dueAmount() {
@@ -120,4 +150,5 @@ console.log(bestCoffeeInTown);
 
 console.log('The cheapest item is', menuManager.cheapestItem());
 
-// console.log(menuManager.drinksOnly());
+console.log(menuManager.drinksOnly());
+// menuManager.foodOnly()

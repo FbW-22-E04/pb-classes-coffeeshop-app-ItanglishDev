@@ -50,13 +50,11 @@ class MenuItemManager {
 
 	drinksOnly() {
 
-		const drinksMenu = this.menu.filter(this.menu.includes('drink'))
+		const drinksMenu = this.menu.filter(el => el.type === 'drink')
 		console.log(drinksMenu)
 		// drinksMenu = this.menu.filter(
 		// this.menu.type === 'drink'
-
 		// )
-
 
 		// const onlyDrinks = this.menu.filter(this.type === 'drink')
 		// return onlyDrinks
@@ -64,7 +62,7 @@ class MenuItemManager {
 
 	foodOnly() {
 
-		const onlyFood = this.menu.filter('Food')
+		const onlyFood = this.menu.filter(el => el.type === 'Food')
 		return onlyFood
 
 	}

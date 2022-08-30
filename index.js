@@ -52,18 +52,13 @@ class MenuItemManager {
 
 		const drinksMenu = this.menu.filter(el => el.type === 'drink')
 		console.log(drinksMenu)
-		// drinksMenu = this.menu.filter(
-		// this.menu.type === 'drink'
-		// )
 
-		// const onlyDrinks = this.menu.filter(this.type === 'drink')
-		// return onlyDrinks
 	}
 
 	foodOnly() {
 
-		const onlyFood = this.menu.filter(el => el.type === 'Food')
-		return onlyFood
+		const onlyFood = this.menu.filter(el => el.type === 'food')
+		console.log(onlyFood);
 
 	}
 
@@ -148,5 +143,6 @@ console.log(bestCoffeeInTown);
 
 console.log('The cheapest item is', menuManager.cheapestItem());
 
-console.log(menuManager.drinksOnly());
+menuManager.drinksOnly();
+menuManager.foodOnly()
 // menuManager.foodOnly()
